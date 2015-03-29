@@ -36,6 +36,7 @@
             "yum -y install jenkins\n",
             "yum -y install java\n",
             "service jenkins start\n",
+            "yum -y install git\n",
             "curl -L https://dl.bintray.com/mitchellh/packer/packer_0.7.5_linux_amd64.zip -o /home/ec2-user/packer/packer_0.7.5_linux_amd64.zip\n",
             "unzip /home/ec2-user/packer/packer_0.7.5_linux_amd64.zip -d /home/ec2-user/packer/\n",
             "curl -O http://localhost:8080/jnlpJars/jenkins-cli.jar\n",

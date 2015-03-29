@@ -18,7 +18,7 @@ file '/var/www/html/index.php' do
   action :create
 end
 
-file '/var/www/html/index.html' do
+template '/var/www/html/index.html' do
   owner 'root'
   group 'root'
   mode '0544'
