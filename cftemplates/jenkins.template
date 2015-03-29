@@ -40,7 +40,10 @@
             "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin github -deploy\n",
             "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin instant-messaging -deploy\n",
             "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin ircbot -restart\n",
-            "chkconfig jenkins on\n"
+            "chkconfig jenkins on\n",
+            "mkdir /home/ec2-user/packer/\n",
+            "curl -L https://dl.bintray.com/mitchellh/packer/packer_0.7.5_linux_amd64.zip -o /home/ec2-user/packer/packer_0.7.5_linux_amd64.zip\n",
+            "unzip /home/ec2-user/packer/packer_0.7.5_linux_amd64.zip -d /home/ec2-user/packer/\n"
         ]]}}
       }
     }
