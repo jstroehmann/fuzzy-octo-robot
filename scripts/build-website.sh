@@ -1,13 +1,8 @@
-mkdir -p ~/.aws/
-cat <<EOF >> ~/.aws/config
-[default]
-aws_access_key_id = XXXXXXXXXXXXXXXXXXXXXXX
-aws_secret_access_key = XXXXXXXXXXXXXXXXXXXXXX
-region=us-east-1
-output=json
-EOF
+export AWS_ACCESS_KEY_ID=AKIAIOSFODNN7EXAMPLE
+export AWS_SECRET_ACCESS_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+export AWS_DEFAULT_REGION=us-east-1
 
-/opt/packer/packer build -machine-readable -var aws_access_key=XXXXXXXXXXXXXXXXXXXXXXXX -var aws_secret_key=XXXXXXXXXXXXXXXXXXXXXXXX packer/packer.json |tee packer.output
+/opt/packer/packer build -machine-readable packer/packer.json |tee packer.output
 AMI_ID=$(awk -F: '/artifact,0,id/ {print $2}' packer.output)
 echo $AMI_ID
 aws s3 cp cftemplates/website.template s3://cf-templates-1bpde8xxropa1-us-east-1
