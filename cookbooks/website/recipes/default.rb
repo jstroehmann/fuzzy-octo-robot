@@ -10,7 +10,7 @@ service "httpd" do
   action :enable
 end
 
-file '/var/www/html/index.php' do
+file '/var/www/html/phpinfo.php' do
   owner 'root'
   group 'root'
   mode '0544'
