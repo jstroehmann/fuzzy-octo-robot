@@ -38,7 +38,7 @@
         "AutoScalingGroup": {
             "Type": "AWS::AutoScaling::AutoScalingGroup",
             "Properties": { 
-                "AvailabilityZones": [ "us-east-1a" ],
+                "AvailabilityZones": [ "us-east-1b" ],
                 "LaunchConfigurationName": { "Ref": "LaunchConfig" },
                 "MinSize": "1",
                 "MaxSize": "5",
