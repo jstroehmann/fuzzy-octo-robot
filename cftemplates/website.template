@@ -20,7 +20,7 @@
             "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
             "Properties": {
                 "SecurityGroups": [ "sg-6e37dc01" ],
-                "Subnets": [ "subnet-77595c1c" ],
+                "Subnets": [ "subnet-d99631ae" ],
                 "Listeners": [
                     { "LoadBalancerPort": "80",
                       "InstancePort": "80",
