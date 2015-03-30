@@ -30,22 +30,26 @@
         "KeyName"        : "jaymz",
         "UserData" : {"Fn::Base64" : {"Fn::Join" : ["", [
             "#!/bin/bash\n",
+            "# update everything \n",
             "yum -y update\n",
+            "# install jenkins \n",
             "wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo\n",
             "rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key\n",
             "yum -y install jenkins\n",
-            "yum -y install java\n",
+            "chkconfig jenkins on\n",
             "service jenkins start\n",
+            "# install other dependancies \n",
+            "yum -y install java\n",
             "yum -y install git\n",
-            "sleep 60\n",
+            "mkdir /home/ec2-user/packer/\n",
             "curl -L https://dl.bintray.com/mitchellh/packer/packer_0.7.5_linux_amd64.zip -o /home/ec2-user/packer/packer_0.7.5_linux_amd64.zip\n",
             "unzip /home/ec2-user/packer/packer_0.7.5_linux_amd64.zip -d /home/ec2-user/packer/\n",
+            "# install cli and jenkins plugins \n",
+            "sleep 30\n",
             "curl -O http://localhost:8080/jnlpJars/jenkins-cli.jar\n",
             "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin github -deploy\n",
             "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin instant-messaging -deploy\n",
             "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin ircbot -restart\n",
-            "chkconfig jenkins on\n",
-            "mkdir /home/ec2-user/packer/\n"
         ]]}}
       }
     }
