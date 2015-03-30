@@ -31,7 +31,7 @@
                     "HealthyThreshold": "2",
                     "UnhealthyThreshold": "5",
                     "Interval": "5",
-                    "Timeout": "5"
+                    "Timeout": "3"
                 }
             }
         },
