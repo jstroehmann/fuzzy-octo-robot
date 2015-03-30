@@ -49,7 +49,7 @@
             "curl -O http://localhost:8080/jnlpJars/jenkins-cli.jar\n",
             "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin github -deploy\n",
             "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin instant-messaging -deploy\n",
-            "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin ircbot -restart\n",
+            "java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin ircbot -restart\n"
         ]]}}
       }
     }
