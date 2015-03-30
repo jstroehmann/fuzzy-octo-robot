@@ -2,7 +2,7 @@
     "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "pqis-shibboleth-development-template",
     "Parameters": {
-        "AMI_ID": {
+        "amiID": {
             "Description": "The new ami id from packer",
             "Type": "String"
         },
@@ -44,20 +44,23 @@
                 "MaxSize": "5",
                 "DesiredCapacity": { "Ref": "WebServerCapacity" },
                 "LoadBalancerNames": [ { "Ref": "ElasticLoadBalancer" } ],
-                "VPCZoneIdentifier": [ "subnet-9e595cf5" ]
+                "VPCZoneIdentifier": [ "subnet-d99631ae" ]
             }
         },
         "LaunchConfig": {
             "Type": "AWS::AutoScaling::LaunchConfiguration",
             "Properties": {
-                "ImageId": "ami-2f726546",
-                "InstanceType": "m3.xlarge",
-                "KernelId": "aki-919dcaf8",
-                "KeyName": "builder@msbuild301",
-                "SecurityGroups": [
-                    "sg-6f37dc00"
-                ]
+                "ImageId": { "Ref": "amiID" },
+                "InstanceType": "t2.micro",
+                "KeyName": "jaymz",
+                "SecurityGroups": [ "sg-8ba1a5ee", "sg-a0caaac4" ]
             }
+        }
+    },
+    "Outputs" : {
+        "URL" : {
+            "Description" : "The URL of your website",
+            "Value" :  { "Fn::Join" : [ "", [ "http://", { "Fn::GetAtt" : [ "ElasticLoadBalancer", "DNSName" ]}]]}
         }
     }
 }
