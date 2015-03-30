@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "pqis-shibboleth-development-template",
+    "Description": "Template for Website",
     "Parameters": {
         "amiID": {
             "Description": "The new ami id from packer",
@@ -19,7 +19,7 @@
         "ElasticLoadBalancer": {
             "Type": "AWS::ElasticLoadBalancing::LoadBalancer",
             "Properties": {
-                "SecurityGroups": [ "sg-6e37dc01" ],
+                "SecurityGroups": [ "sg-8ba1a5ee", "sg-a0caaac4" ],
                 "Subnets": [ "subnet-d99631ae" ],
                 "Listeners": [
                     { "LoadBalancerPort": "80",
