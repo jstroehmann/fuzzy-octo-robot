@@ -25,3 +25,11 @@ template '/var/www/html/index.html' do
   source 'index.html.erb'
   action :create
 end
+
+template '/var/www/html/carousel.html' do
+  owner 'root'
+  group 'root'
+  mode '0544'
+  source 'carousel.html.erb'
+  action :create
+end
