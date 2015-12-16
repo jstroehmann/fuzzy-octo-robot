@@ -38,7 +38,7 @@ template '/var/www/html/index.html' do
   action :create
 end
 
-cookbook_file '/var/www/chara1.png' do
+cookbook_file '/var/www/html/chara1.png' do
   owner 'root'
   group 'root'
   mode '0544'
@@ -46,7 +46,7 @@ cookbook_file '/var/www/chara1.png' do
   action :create
 end
 
-cookbook_file '/var/www/icon0.png' do
+cookbook_file '/var/www/html/icon0.png' do
   owner 'root'
   group 'root'
   mode '0544'
