@@ -29,3 +29,11 @@ bash "unzip enchant" do
     unzip enchant.js.zip
   EOH
 end
+
+template '/var/www/html/index.html' do
+  owner 'root'
+  group 'root'
+  mode '0544'
+  source 'index.html.erb'
+  action :create
+end
