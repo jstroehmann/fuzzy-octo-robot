@@ -18,10 +18,14 @@ file '/var/www/html/phpinfo.php' do
   action :create
 end
 
-template '/var/www/html/index.html' do
-  owner 'root'
-  group 'root'
-  mode '0544'
-  source 'index.html.erb'
-  action :create
+remote_file "/var/www/html/enchant.js.zip" do
+  source "https://github.com/uei/enchant.js-builds/archive/v0.8.2-b.zip"
+  action :create_if_missing
+end
+
+bash "unzip enchant"
+  cwd "/var/www/html"
+  code <<-EOH
+    unzip enchant.js.zip
+  EOH
 end
