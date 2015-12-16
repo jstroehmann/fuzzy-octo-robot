@@ -37,3 +37,19 @@ template '/var/www/html/index.html' do
   source 'index.html.erb'
   action :create
 end
+
+cookbook_file '/var/www/chara1.png' do
+  owner 'root'
+  group 'root'
+  mode '0544'
+  source 'chara1.png'
+  action :create
+end
+
+cookbook_file '/var/www/icon0.png' do
+  owner 'root'
+  group 'root'
+  mode '0544'
+  source 'icon0.png'
+  action :create
+end
