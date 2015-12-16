@@ -23,7 +23,7 @@ remote_file "/var/www/html/enchant.js.zip" do
   action :create_if_missing
 end
 
-bash "unzip enchant"
+bash "unzip enchant" do
   cwd "/var/www/html"
   code <<-EOH
     unzip enchant.js.zip
