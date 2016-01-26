@@ -51,7 +51,7 @@
             "Type": "AWS::AutoScaling::LaunchConfiguration",
             "Properties": {
                 "ImageId": { "Ref": "amiID" },
-                "InstanceType": "t2.micro",
+                "InstanceType": "t2.nano",
                 "KeyName": "jaymz",
                 "SecurityGroups": [ "sg-8ba1a5ee", "sg-a0caaac4" ]
             }

@@ -9,7 +9,7 @@
     "secret_key": "{{user `aws_secret_key`}}",
     "region": "us-east-1",
     "source_ami": "ami-1ecae776",
-    "instance_type": "t2.micro",
+    "instance_type": "t2.medium",
     "ssh_username": "ec2-user",
     "ami_name": "website {{timestamp}}",
     "vpc_id": "vpc-1b3fb97e",
